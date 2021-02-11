@@ -1,12 +1,13 @@
-# Adapted from a Java code in the "Refactoring" book by Martin Fowler.
-# Replace temp with query
-# Code snippet. Not runnable.
-def get_price():
+"""This program takes in a quantity and item price
+    and then returns the discounted price of said item"""
+
+
+def get_price(quantity, item_price):
+    """Gets discounted price"""
     base_price = quantity * item_price
     discount_factor = 0
-    if base_price > 1000: 
+    if base_price > 1000:
         discount_factor = 0.95
-    else: 
+    else:
         discount_factor = 0.98
     return base_price * discount_factor
-
