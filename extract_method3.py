@@ -1,20 +1,20 @@
-# Written by Kamran Bigdely
-# Example for Compose Methods: Extract Method.
+"""Extract Method"""
 import math
-xc1 = 4
-yc1 = 4.25
+START_X = 4
+START_Y = 4.25
 
-xc2 = 53
-yc2 = -5.35
+END_X = 53
+END_Y = -5.35
 # Calculate the distance between the two circle
-distance = math.sqrt((xc1-xc2)**2 + (yc1 - yc2)**2)
+distance = math.sqrt((START_X-END_X)**2 + (START_Y - END_Y)**2)
 print('distance', distance)
-# *** somewhere else in your program ***
-xa = -36
-ya = 97
 
-xb = .34
-yb = .91
+START_A = -36
+START_B = 97
+
+END_A = .34
+END_B = .91
 # calcualte the length of vector AB vector which is a vector between A and B points.
-length = math.sqrt((xa-xb)*(xa-xb) + (ya-yb)*(ya-yb))
+length = math.sqrt((START_A-END_A)*(START_A-END_A) +
+                   (START_B-END_B)*(START_B-END_B))
 print('length', length)
