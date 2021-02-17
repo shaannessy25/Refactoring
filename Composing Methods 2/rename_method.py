@@ -1,28 +1,28 @@
-# by Kami Bigdely
-# Rename Method
-# Reference: https://parade.com/1039985/marynliles/pick-up-lines/
+"""Methods for various calculations"""
 
-def cal_un_gr(graph):   # TODO: Rename this function to reflect what it's doing.
+
+def area_under_graph(graph):
     """Calculate the area under the input graph."""
-    # bla bla bla.
-    pass
+    # Still working
+    return graph
 
-#####################
 
-def get_value(li):  # TODO: Rename this function to reflect what it's doing.
-    m = li[0]
-    for value in li:
-        if value > m:
-            m = value
-    return m
+def get_max_value(num_list):
+    """This method finds the max value in a list"""
+    max_value = num_list[0]
+    for value in num_list:
+        max_value = value if value > max_value else max_value
+    return max_value
 
 
 li = [5, -1, 43, 32, 87, -100]
-print(get_value(li))
+print(get_max_value(li))
 
-############################
-def process(sentence):  # TODO: Rename this function to reflect what it's doing.
+
+def split_string(sentence):
+    """This method splits the words in a sentence"""
     words = sentence[0:].split(' ')
     return words
 
-print(process('If you were a vegetable, you’d be a ‘cute-cumber.'))
+
+print(split_string('If you were a vegetable, you’d be a ‘cute-cumber.'))
