@@ -2,17 +2,22 @@
 # Remove assignment to method parameter.
 """This file will calculates kinnetic energy"""
 
+
 class Distance:
     """Represents the distance"""
+
     def __init__(self, value, unit):
         self.unit = unit
         self.value = value
 
+
 class Mass:
     """Represents the mass of the object"""
+
     def __init__(self, value, unit):
         self.value = value
         self.unit = unit
+
 
 def calculate_kinetic_energy(object_mass, dist, time):
     """This method will calculate the kinetic energy"""

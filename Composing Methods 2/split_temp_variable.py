@@ -1,17 +1,29 @@
-# by Kami Bigdely
-# Split temporary variable
 
-patty = 70 # [gr]
-pickle = 20 # [gr]
-tomatoes = 25 # [gr]
-lettuce = 15 # [gr]
-buns = 95 # [gr]
-sandwich_weight = (2 * patty + 4 * pickle + 3 * tomatoes + 2 * lettuce
-                + 2 * buns)
-print("NY Burger Weight", sandwich_weight)
-kimchi = 30 # [gr]
-mayo = 5 # [gr]
-golden_fried_onion = 20 # [gr]
-sandwich_weight = (2 * patty + 4 * pickle + 3 * tomatoes 
-                + kimchi + mayo + golden_fried_onion + 2 * buns)
-print("Seoul Kimchi Burger Weight", sandwich_weight)
+
+class Sandwhich:
+    def __init__(self, patty=None, pickle=None , tomatoes=None, 
+                lettuce=None, buns=None, mayo=None, golden_onion=None, kimchi=None):
+        self.patty = patty
+        self.pickle = pickle
+        self.tomatoes = tomatoes
+        self.lettuce = lettuce
+        self.buns = buns
+        self.mayo = mayo
+        self.golden_onion = golden_onion
+        self.kimchi = kimchi
+    def ny_sandwhich(self, patty, pickle, tomatoes, lettuce, buns):
+        ny_sandwhich = (2 * patty + 4 * pickle + 3 * tomatoes + 2
+                        * lettuce + 2 * buns)
+        return print("NY Burger Weight", ny_sandwhich)
+
+    def kimchi_sandwhich(self, patty, pickle, tomatoes, 
+                        lettuce, buns, kimchi, mayo, golden_onion):
+        kimchi_sandwhich = (2 * patty + 4 * pickle + 3 * tomatoes
+                    + kimchi + mayo + golden_onion + 2 * buns)
+        return print("Seoul Kimchi Burger Weight", kimchi_sandwhich)
+
+
+sandwhich_one = Sandwhich().ny_sandwhich(70, 20, 25, 15, 95)
+sandwhich_two = Sandwhich().kimchi_sandwhich(70, 20, 25, 15, 95, 30, 5, 20)
+
+
