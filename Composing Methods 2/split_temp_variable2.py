@@ -1,13 +1,14 @@
-
-# By Kami Bigdely
-# Split temp variable
-
-def save_into_db(info):
-    print("saved into databse")
+"""This application prints age of user based on inputs"""
 
 
-user_input = input('Please enter your username: ')
-save_into_db(user_input)
-user_input = int(input('Please enter your birth year: '))
-age = 2020 - user_input
-print("You are",age, "years old.")
+def age_finder():
+    """This method will calculate and print the users age"""
+    username = input('Please enter your username: ')
+    current_year = input('Please enter current year: ')
+    age_input = int(input('Please enter your birth year: '))
+    age = current_year - age_input
+    return print(f"Hi {username}! you are,{age} years old.")
+
+
+if __name__ == '__main__':
+    age_finder()
