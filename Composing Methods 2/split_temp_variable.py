@@ -1,29 +1,31 @@
+"""This file prints the weight of sandwhich based on type"""
 
 
 class Sandwhich:
-    def __init__(self, patty=None, pickle=None , tomatoes=None, 
-                lettuce=None, buns=None, mayo=None, golden_onion=None, kimchi=None):
+    """Represents ingredients of a sandwhich"""
+
+    def __init__(self, patty, pickle, tomatoes,
+                 lettuce, buns):
         self.patty = patty
         self.pickle = pickle
         self.tomatoes = tomatoes
         self.lettuce = lettuce
         self.buns = buns
-        self.mayo = mayo
-        self.golden_onion = golden_onion
-        self.kimchi = kimchi
-    def ny_sandwhich(self, patty, pickle, tomatoes, lettuce, buns):
-        ny_sandwhich = (2 * patty + 4 * pickle + 3 * tomatoes + 2
-                        * lettuce + 2 * buns)
+
+    def ny_sandwhich(self):
+        """Returns the weight of New York sandwhich"""
+
+        ny_sandwhich = (2 * self.patty + 4 * self.pickle + 3 * self.tomatoes + 2
+                        * self.lettuce + 2 * self.buns)
         return print("NY Burger Weight", ny_sandwhich)
 
-    def kimchi_sandwhich(self, patty, pickle, tomatoes, 
-                        lettuce, buns, kimchi, mayo, golden_onion):
-        kimchi_sandwhich = (2 * patty + 4 * pickle + 3 * tomatoes
-                    + kimchi + mayo + golden_onion + 2 * buns)
+    def kimchi_sandwhich(self, mayo, golden_onion, kimchi):
+        """Returns the weight of Kimchi sandwhich"""
+
+        kimchi_sandwhich = (2 * self.patty + 4 * self.pickle + 3 * self.tomatoes
+                            + kimchi + mayo + golden_onion + 2 * self.buns)
         return print("Seoul Kimchi Burger Weight", kimchi_sandwhich)
 
 
-sandwhich_one = Sandwhich().ny_sandwhich(70, 20, 25, 15, 95)
-sandwhich_two = Sandwhich().kimchi_sandwhich(70, 20, 25, 15, 95, 30, 5, 20)
-
-
+sandwhich_one = Sandwhich(70, 20, 25, 15, 95).ny_sandwhich()
+sandwhich_two = Sandwhich(70, 20, 25, 15, 95).kimchi_sandwhich(30, 5, 20)
