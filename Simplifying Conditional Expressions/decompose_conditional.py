@@ -1,21 +1,28 @@
-# By Kami Bigdely
-# Decompose conditional: You have a complicated conditional(if-then-else) statement. Extract
-# methods from the condition, then part, and else part(s).
+"""This file determines if ingredients are toxic or not"""
 
-def make_alert_sound():
-    print('made alert sound.')
-def make_accept_sound():
-    print('made acceptance sound')
 
-ingredients = ['sodium benzoate']
-if 'sodium nitrate' in ingredients or 'sodium benzoate' in ingredients\
-or 'sodium oxide' in ingredients:
-    print('!!!')
-    print('there is a toxin in the food!')    
-    print('!!!')
-    make_alert_sound()
-else:
-    print('***')
-    print('Toxin Free')
-    print('***')
-    make_accept_sound()
+class Toxic:
+    """Class represents toxins"""
+
+    def __init__(self, ingredients):
+        self.ingredients = ingredients
+        self.toxins = ['sodium nitrate', 'sodium benzoate', 'sodium oxide']
+
+    def make_alert_sound(self):
+        """Returns string"""
+        return "!!! \nThere is a toxin in the food! \n!!!! \nmade alert sound"
+
+    def make_accept_sound(self):
+        """Returns string"""
+        return "*** \nToxin Free \n*** \nmade acceptance sound"
+
+    def message(self):
+        """Determines if ingredients are toxic or not"""
+        for item in self.toxins:
+            if item in self.ingredients:
+                return self.make_alert_sound()
+        return self.make_accept_sound()
+
+
+test = Toxic('sodium nitrate').message()
+print(test)
